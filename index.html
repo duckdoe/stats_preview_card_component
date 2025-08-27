@@ -1,33 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Stats preview card component</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
-
-  Get insights that help your business grow.
-
-  Discover the benefits of data analytics and make better decisions regarding revenue, customer 
-  experience, and overall efficiency.
-
-  10k+ companies
-  314 templates
-  12m+ queries
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Frontend Mentor | Stats preview card component</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <picture>
+          <source
+            srcset="images/image-header-desktop.jpg"
+            media="width > 768px"
+          />
+          <source
+            srcset="images/image-mobile-desktop.jpg"
+            media="width < 768px"
+          />
+          <img src="images/image-header-desktop.jpg" alt="header pattern" />
+        </picture>
+        <div id="overlay"></div>
+      </header>
+      <section id="insights">
+        <h1>
+          Get <span class="purple">insights</span> that help your business grow.
+        </h1>
+        <p>
+          Discover the benefits of data analytics and make better decisions
+          regarding revenue, customer experience, and overall efficiency.
+        </p>
+        <div id="insight_category">
+          <h3>10k+</h3>
+          <p>companies</p>
+        </div>
+        <div id="insight_category">
+          <h3>314</h3>
+          <p>templates</p>
+        </div>
+        <div id="insight_category">
+          <h3>12m+</h3>
+          <p>queries</p>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>
