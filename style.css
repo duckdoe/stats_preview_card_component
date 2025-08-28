@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend+Deca:wght@100..900&display=swap");
 
 :root {
   /* Primary */
@@ -12,15 +12,15 @@
   --White-stat-headings: hsla(0, 0%, 100%, 0.6);
 }
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body{
-  font-size: .9375rem;
-  font-family: 'Lexend Deca', sans-serif;
+body {
+  font-size: 0.9375rem;
+  font-family: "Lexend Deca", sans-serif;
   background-color: var(--Navy-950);
   display: flex;
   align-items: center;
@@ -29,24 +29,125 @@ body{
   height: 100vh;
 }
 
-img{
+img {
   width: 100%;
+  border-radius: 10px 10px 0px 0px;
 }
 
-header{
+header {
   position: relative;
 }
 
-#overlay{
+#overlay {
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: calc(100% - 4px);
   background-color: var(--Purple-500);
   top: 0;
   left: 0;
-  opacity: .5
+  opacity: 0.45;
 }
 
-main{
+main {
   width: 350px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "header"
+    "insights";
+  margin-top: 300px;
+}
+
+#insights {
+  padding: 30px;
+  text-align: center;
+  background-color: var(--Blue-950);
+  margin-top: -4px;
+  border-radius: 0px 0px 10px 10px;
+  margin-bottom: 30px;
+}
+
+#insights h1 {
+  font-family: "inter", sans-serif;
+  font-size: 2rem;
+  color: var(--White-main-heading-stats);
+  font-weight: 700;
+}
+
+.purple {
+  color: var(--Purple-500);
+}
+
+#insights #main_para {
+  line-height: 25px;
+  font-weight: 400;
+  font-size: 1.03rem;
+  margin-top: 20px;
+  color: var(--White-main-paragraph);
+  margin-bottom: 20px;
+}
+
+#insight_category {
+  margin-top: 30px;
+}
+
+#insight_category h3 {
+  font-size: 1.5rem;
+  color: var(--White-main-heading-stats);
+  font-family: "inter", sans-serif;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+#insight_category p {
+  font-weight: 400;
+  color: var(--White-stat-headings);
+}
+
+@media (width > 1024px) {
+  main {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "insights header";
+    width: 910px;
+    height: 400px;
+    margin: 0;
+  }
+  header {
+    grid-area: header;
+    align-self: center;
+    justify-self: end;
+    height: 100%;
+    display: flex;
+    align-items: stretch;
+  }
+  img {
+    border-radius: 0px;
+  }
+
+  #container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  #insights {
+    text-align: left;
+    padding: 50px;
+    grid-area: insights;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+    border-radius: 0px;
+  }
+  #insights #main_para {
+    font-size: 0.9rem;
+  }
+  #overlay{
+    height: calc(100% + 3px);
+  }
+  header img {
+    height: 100%;
+    object-fit: cover;
+  }
 }
